@@ -10,3 +10,6 @@ __pycache__/
 .conda/
 conda_env/
 .ipynb_checkpoints/
+
+#venv
+.venv/

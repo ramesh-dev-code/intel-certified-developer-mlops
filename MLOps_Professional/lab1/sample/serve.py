@@ -27,9 +27,18 @@ async def ping():
 
 @app.post("/maintenance")
 async def predict(payload:MaintenancePayload):
-    
-    maintenance_result = test_maintenance(payload.temperature)
+    # Lab-1: Answer
+    maintenance_result = test_maintenance(payload.temperature, payload.pressure)
     return {"msg": "Completed Analysis", "Maintenance Status": maintenance_result}
+
+# Lab-1: Answer
+@app.get("/supportbot")
+async def supportbot(input: str = None):
+    if input=="help":
+        return {"message":"Bring the harvester in for maintenance"}
+    return {"message":"SupportBot is working"}
+
+
 
 if __name__ == "__main__":
     uvicorn.run("serve:app", host="0.0.0.0", port=5000, log_level="info")
