@@ -1,12 +1,5 @@
 from pydantic import BaseModel
-
-
+# Lab-1: Add pressure parameter
 class MaintenancePayload(BaseModel):
-    """
-    Model for representing maintenance data.
-
-    Attributes:
-        temperature (int): The temperature value.
-    """
-
     temperature: int
+    pressure: int

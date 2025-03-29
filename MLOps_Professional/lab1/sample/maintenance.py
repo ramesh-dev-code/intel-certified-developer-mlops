@@ -1,17 +1,21 @@
-# maintenance test business logic
+# maitnenace test business logic
+# Lab-1: Add pressure parameter
+def test_maintenance(temperature:int, pressure:int) -> str:
+    """_summary_
 
+    Parameters
+    ----------
+    temperature : int
+        test parameter for temperature sensor readings
 
-def test_maintenance(temperature: int) -> str:
-    """Tests the maintenance status based on temperature sensor readings.
+    pressure : int
+        test parameter for pressure sensor readings
 
-    Args:
-        temperature (int): Test parameter for temperature sensor readings.
-
-    Returns:
-        str: 'Needs Maintenance' if temperature is greater than 50, otherwise 'No Maintenance Required'.
+    Returns
+    -------
+    str
+        'Approved' or 'Denied' based on temperature/pressure readings
     """
-    maintenance_status = (
-        "Needs Maintenance" if temperature > 50 else "No Maintenance Required"
-    )
-
+    maintenance_status = 'Needs Maintenance' if temperature > 50 or pressure > 2000 else 'No Maintenance Required'
+    
     return maintenance_status
